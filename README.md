@@ -3,3 +3,11 @@
 ```Bash
 pip install vk_api
 ```
+Авторизация пользователя.
+По логину и паролю
+```
+import vk_api
+
+vk_session = vk_api.VkApi('+71234567890', 'mypassword')
+vk_session.auth()
+```
