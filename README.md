@@ -16,9 +16,17 @@ vk_session.auth()
 
 По токену
 ```python
-
 vk_session = vk_api.VkApi(token='*******')
+```
 
-longpoll = VkLongPoll(vk_session)
+### Работа с API
 
+Берем данные API
+```python
+vk = vk_session.get_api()
+```
+
+Запить на стене
+```python
+vk.wall.post(message='Hello world!')
 ```
