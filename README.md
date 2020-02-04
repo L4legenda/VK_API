@@ -32,6 +32,7 @@ vk.wall.post(message='Hello world!')
 ```
 Проверка сообщения
 ```python
+
 from vk_api.longpoll import VkLongPoll, VkEventType
 
 longpoll = VkLongPoll(vk_session)
@@ -46,4 +47,4 @@ for event in longpoll.listen():
 					random_id=random.randint(1, 2147483647),
 				)
 ```
-
+...
