@@ -41,8 +41,8 @@ for event in longpoll.listen():
 		if event.from_user:
 			if event.text == "***":
 				vk.messages.send(
-          user_id=event.user_id,
-          message="Текст сообщения",
-          random_id=random.randint(1, 2147483647),
-        )
+				  user_id=event.user_id,
+				  message="Текст сообщения",
+				  random_id=random.randint(1, 2147483647),
+				)
 ```
