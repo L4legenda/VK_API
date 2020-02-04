@@ -30,3 +30,19 @@ vk = vk_session.get_api()
 ```python
 vk.wall.post(message='Hello world!')
 ```
+Проверка сообщения
+```python
+from vk_api.longpoll import VkLongPoll, VkEventType
+
+longpoll = VkLongPoll(vk_session)
+
+for event in longpoll.listen():
+	if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+		if event.from_user:
+			if event.text == "***":
+				vk.messages.send(
+          user_id=event.user_id,
+          message="Текст сообщения",
+          random_id=random.randint(1, 2147483647),
+        )
+```
