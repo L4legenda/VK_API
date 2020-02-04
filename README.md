@@ -1,3 +1,5 @@
 # VK API
 Установка VK API
-```# pip install vk_api```
+```Bash
+# pip install vk_api
+```
