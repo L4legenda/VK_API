@@ -52,7 +52,7 @@ photo = upload.photo_messages(photos="img.jpg")[0]
 vk.messages.send(
   user_id=event.user_id,
   message="Текст сообщения",
-	# Атрибут отправки изображения
+  # Атрибут отправки изображения
   attachment='photo{}_{}'.format(photo['owner_id'], photo['id']),
   random_id=random.randint(1, 2147483647),
 )
