@@ -5,17 +5,10 @@ pip install vk_api
 ```
 ### Авторизация пользователя.
 
-По логину и паролю
+По токену
 ```python
 import vk_api
 
-vk_session = vk_api.VkApi('+71234567890', 'mypassword')
-vk_session.auth()
-```
-
-
-По токену
-```python
 vk_session = vk_api.VkApi(token='*******')
 ```
 
@@ -26,14 +19,11 @@ vk_session = vk_api.VkApi(token='*******')
 vk = vk_session.get_api()
 ```
 
-Запить на стене
-```python
-vk.wall.post(message='Hello world!')
-```
 Проверка сообщения
 ```python
 
 from vk_api.longpoll import VkLongPoll, VkEventType
+import random
 
 longpoll = VkLongPoll(vk_session)
 
@@ -47,4 +37,4 @@ for event in longpoll.listen():
 					random_id=random.randint(1, 2147483647),
 				)
 ```
-...
+
