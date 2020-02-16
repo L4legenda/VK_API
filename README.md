@@ -57,3 +57,20 @@ vk.messages.send(
   random_id=random.randint(1, 2147483647),
 )
 ```
+
+Отправка URL изображения
+```python
+session = requests.Session()
+from vk_api import VkUpload 
+upload = VkUpload(vk_session)
+
+image_url = 'Ссылка на картинку'
+image = session.get(image_url, stream=True)
+photo = upload.photo_messages(photos=image.raw)[0]
+
+vk.messages.send(
+    user_id=event.user_id,
+    attachment='photo{}_{}'.format(photo['owner_id'], photo['id']),
+    message='Ваш текст'
+)
+```
