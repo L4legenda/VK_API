@@ -28,17 +28,17 @@ import random
 longpoll = VkLongPoll(vk_session)
 
 for event in longpoll.listen():
-	if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
-		if event.from_user:
-			# Проверка сообщения
-			if event.text == "***":
+ if event.type == VkEventType.MESSAGE_NEW and event.to_me and event.text:
+  if event.from_user:
+   # Проверка сообщения
+   if event.text == "***":
 			
-				#Отправка сообщения
-				vk.messages.send(
-					user_id=event.user_id, # Пользователь получатель
-					message="Текст сообщения", # Текст сообщения
-					random_id=random.randint(1, 2147483647),
-				)
+    #Отправка сообщения
+    vk.messages.send(
+     user_id=event.user_id, # Пользователь получатель
+     message="Текст сообщения", # Текст сообщения
+     random_id=random.randint(1, 2147483647),
+    )
 ```
 
 Отправка изображений
