@@ -74,3 +74,21 @@ vk.messages.send(
     message='Ваш текст'
 )
 ```
+Несколько изображений
+```python
+imgs = []
+photo1 = upload.photo_messages(photos="123.jpg")[0]
+photo2 = upload.photo_messages(photos="bot.jpg")[0]
+
+imgs.append('photo{}_{}'.format(photo1['owner_id'], photo1['id']))
+imgs.append('photo{}_{}'.format(photo2['owner_id'], photo2['id']))
+# photos - пусть к изображению
+
+vk.messages.send(
+    user_id=event.user_id,
+    message="Текст сообщения",
+    # Атрибут отправки изображения
+    attachment=','.join(imgs),
+    random_id=random.randint(1, 2147483647),
+)
+```
