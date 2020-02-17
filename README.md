@@ -77,12 +77,14 @@ vk.messages.send(
 Несколько изображений
 ```python
 imgs = []
+
+# photos - пусть к изображению
 photo1 = upload.photo_messages(photos="123.jpg")[0]
 photo2 = upload.photo_messages(photos="bot.jpg")[0]
 
 imgs.append('photo{}_{}'.format(photo1['owner_id'], photo1['id']))
 imgs.append('photo{}_{}'.format(photo2['owner_id'], photo2['id']))
-# photos - пусть к изображению
+
 
 vk.messages.send(
     user_id=event.user_id,
